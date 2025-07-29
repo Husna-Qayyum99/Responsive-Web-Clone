@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily | Task | Tracker</title>
+    <style>
+        body{
+            background-color: rgb(233, 233, 233);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* width: 90%; */
+            
+        }
+        .container{
+            background-color: white;
+            margin: 50px;
+            border-radius: 15px;
+            /* padding: -40px; */
+            box-sizing:border-box;
+
+        }
+        .task-tracker-box{
+            /* padding: -150px; */
+            
+        
+        }
+        .main-heading h1{
+            padding-top: 20px;
+            color: blue;
+            font-weight: 500;
+            text-transform: capitalize;
+            text-align: center;
+            font-family: sans-serif;
+            
+        }
+        .tasks-details{
+            display: flex;
+            flex-direction: row;
+            gap:180px;
+            justify-content: center;
+            color: rgb(100, 100, 100);
+            margin-top: 100px;
+        }
+        .completed-counts{
+            color: blue;
+        }
+        
+        .count-total{
+            color: blue;
+        }
+        .pending-counts{
+            color: blue;
+        }
+        .input-section{
+            display: grid;
+            grid-template-columns: 330px 200px 100px;
+            margin-top: 30px;
+            gap: 10px;
+            margin-left: 25px;
+            margin-left: 25px;
+            justify-content: center;
+            
+           
+        }
+        input{
+            line-height: 40px;
+            border-radius: 10px;
+            padding: 5px;
+            padding-left: 15px;
+            border: 1px solid gray;
+            font-size: 15px;
+        }
+        #priority-selection{
+            border-radius: 10px;
+            padding: 5px;
+            padding-left: 15px;
+            border: 1px solid gray;
+            font-size: 15px;
+        }
+        button{
+            border-radius: 10px;
+            padding: 5px;
+            border: 1px solid gray;
+            font-size: 15px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+
+        }
+        .all-buttons{
+            margin-left: 230px ;
+            width: 63%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            cursor: pointer;
+            
+            
+        }
+        .all-buttons span{
+            margin-left: 2px;
+            /* padding: 3px 5px; */
+            border: 1px solid gray;
+            text-align: center;
+            border-radius: 15px;
+            white-space: nowrap;
+            display: inline-block;
+            width: 120px; 
+            padding: 5px;
+
+        }
+        #low-priority{
+            position: relative;
+            left: -280px;
+            top: 15px;
+        }
+
+        .all-buttons span:hover{
+            background-color: blue;
+            color: white;
+        }
+
+        .check-box{
+            display: flex;
+            flex-direction: row;
+            border-left: 5px solid gray;
+            border-radius: 10px;
+            margin-top: 30px;
+            padding: 10px 10px;
+            width: 90%;
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+            border-top: 1px solid gray;
+            margin-left: 240px;
+            width: 60%;
+         
+
+        }
+        .check-box p{
+            width: 75%;
+            margin-left:50px ;
+        }
+        .check-box span{
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            cursor: pointer;
+        }
+       .right-of-check-box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-left: auto; 
+            width: 100%;
+        }
+        #high{
+            background-color: pink;
+            color: red;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #delete{
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px ;
+
+
+        }
+        .daily-task-check-box{
+            display: flex;
+            flex-direction: row;
+            border-left: 5px solid rgb(255, 1, 1);
+            border-radius: 10px;
+            margin-top: 30px;
+            padding: 5px 10px;
+            width: 90%;
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+            border-top: 1px solid gray;
+            margin-left: 240px;
+            width: 60%;
+
+        }
+        .daily-task-check-box p{
+            width: 75%;
+            margin-left:50px ;
+        }
+        .daily-task-check-box span{
+            cursor: pointer;
+        }
+
+        .clear-completed-tasks{
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(219, 26, 0);
+            color: white;
+            padding: 10px;
+            margin: 50px;
+            width: 61%;
+            margin-left: 240px;
+            font-size: 18px;
+
+            
+        }
+        .date-time{
+            display: flex;
+            justify-content: center;
+            color: rgb(112, 112, 112);
+        }
+        .completed-task {
+            filter: blur(0.5px);
+
+        }
+
+        .completed-task p {
+           text-decoration: line-through;
+           color: gray;
+        }
+        
+        @media (max-width:800px ) {
+            .input-section{
+                margin: 40px ;
+                /* padding: 20px -10px; */
+                
+            }
+            input{
+                width: 230px;
+                margin-left: 50px;
+                
+            }
+            #priority-selection{
+                margin-left: -25px;
+                margin-right: 60px;
+            }
+            #add-button{
+                position: relative;
+                left: -60px;
+            }
+            .tasks-details{
+                gap: 120px;
+            }
+            .all-buttons{
+                margin: 0;
+                width: 100%;
+                margin-left: 50px;
+                display:flex;
+                flex-direction: row;
+                row-gap: 50px;
+                
+                
+            }
+            .all-buttons span{
+                padding: 5px 5px;
+                width: fit-content;
+                  
+            }
+            .mobile-break{
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                top: 25px;
+            }
+            .check-box input{
+            margin-left: -80px;
+        }
+        .check-box p{
+            position: relative;
+            left: -30px;
+    
+            
+        }
+        }
+        @media (max-width:1000px) {
+            .all-buttons{
+                margin: 0;
+                width: 100%;
+                /* margin-left: 50px; */
+                display:flex;
+                flex-direction: row;
+                
+                
+                
+            }
+            .all-buttons span{
+                padding: 5px 5px;
+                width: fit-content;
+                  
+            }
+            .mobile-break{
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                left: 280px;
+                top: -16px;
+               
+            }
+            .check-box{
+            margin-left: 160px;
+            }
+            .daily-task-check-box{
+                margin-left: 160px;
+
+            }
+            .clear-completed-tasks{
+                margin-left: 160px;
+                /* width: 100%; */
+            }
+           @media (min-width: 1000px)and (max-width: 1230px) {
+              .all-buttons {
+                /* margin-left: 230px;
+                width: 63%; */
+               display: grid;
+               grid-template-columns:repeat(3, 1fr);
+               grid-template-rows: repeat(2, auto);
+               /* gap: 10px; */
+               /* justify-items: center; */
+              }
+  } 
+  }
+
+            
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="task-tracker-box">
+            <header>
+                <div class="main-heading">
+                    <h1>daily task tracker</h1>
+                </div>
+                <p class="date-time" id="date-display"></p>
+
+            </header>
+            <div class="tasks-details">
+                <span id="total-tasks">
+                    <div class="count-total">
+                        <h2>0</h2>
+
+                    </div>
+                    
+                    <span>Total Tasks</span>
+                 </span>
+                <span id="completed-tasks">
+                    <div class="completed-counts">
+                        <h2>0</h2>
+                    </div>
+                    <span>Completed</span>
+                </span>
+                <span id="pending-tasks">
+                    <div class="pending-counts"><h2>0</h2></div>
+                    <span>Pending</span>
+                </span>
+            </div>
+            <div class="input-section">
+                <input type="text" id="new-task" placeholder="Enter a new task...">
+                 <select name="" id="priority-selection">
+                   <option value=""> Low Priority</option>
+                   <option value="">Medium Priority</option>
+                    <option value="">High Priority</option>
+                </select>
+                <button id="add-button">
+                    Add Task
+                </button>
+            
+                   
+            </div>
+            <br><br>
+            <div class="all-buttons">
+                <span id="all-task">All Tasks</span>
+                <span id="pending">Pending</span>
+                <span id="
+                completed">Completed</span>
+                <span id="high-priority">
+                    High Priority
+                </span>
+                <div class="medium-class">
+                    <span id="medium-priority">Medium Priority</span>
+                </div>
+                <div class="mobile-break">
+                <span id="low-priority" >Low Priority</span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="check-box">
+                <input type="checkbox" id="complete-project" class="task-checkbox">
+                <p>
+                    Complete Project Presentation for client meeting
+                </p>
+                <div class="right-of-check-box">
+                    <span id="high">
+                    HIGH
+                </span>
+                <span class="submission-time">
+
+                </span>
+                <span id="delete">DELETE</span>
+                </div>
+            </div>
+            <div class="daily-task-check-box">
+                <input type="checkbox" id="complete-project" class="task-checkbox">
+                <p>
+                    Finish the 'Daily Task Tracker' project today
+                </p>
+                <div class="right-of-check-box">
+                    <span id="high">
+                    HIGH
+                </span>
+                <span class="submission-time">
+
+                </span>
+                <span id="delete">DELETE</span>
+                </div>
+            </div>
+            <div class="clear-completed-tasks" onclick="clear_tasks()">
+                clear completed tasks
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+// ============== 1. Show Today’s Date ================
+
+const dateElement = document.getElementById("date-display");
+
+const today = new Date();
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const formattedDate = `${weekdays[today.getDay()]}, ${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+dateElement.textContent = formattedDate;
+
+
+// =================== 2.Get Current Time ===================
+function getCurrentTime() {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12;
+  return `${hours}:${minutes} ${ampm}`;
+}
+
+
+// =================== Checkbox Strike-through ===================
+function applyCheckboxLogic(checkbox, taskBox) {
+  checkbox.addEventListener("change", () => {
+    taskBox.classList.toggle("completed-task", checkbox.checked);
+  });
+}
+
+
+// ===================Delete Button ===================
+function applyDeleteLogic(deleteBtn, taskBox) {
+  deleteBtn.addEventListener("click", () => {
+    taskBox.remove();
+    updateTaskCount();
+  });
+}
+
+
+// ===================Task Count ===================
+function updateTaskCount() {
+  const allTasks = document.querySelectorAll(".check-box, .daily-task-check-box");
+  let completed = 0;
+
+  allTasks.forEach(task => {
+    const isChecked = task.querySelector("input[type='checkbox']").checked;
+    if (isChecked) completed++;
+  });
+
+  const total = allTasks.length;
+  const pending = total - completed;
+
+  document.querySelector(".count-total h2").textContent = total;
+  document.querySelector(".completed-counts h2").textContent = completed;
+  document.querySelector(".pending-counts h2").textContent = pending;
+}
+
+// =================== Check Existing Tasks ===================
+const allTaskBoxes = document.querySelectorAll(".check-box, .daily-task-check-box");
+
+allTaskBoxes.forEach((taskBox) => {
+  const checkbox = taskBox.querySelector("input[type='checkbox']");
+  const deleteBtn = taskBox.querySelector("#delete");
+
+  if (checkbox) applyCheckboxLogic(checkbox, taskBox);
+  if (deleteBtn) applyDeleteLogic(deleteBtn, taskBox);
+});
+
+
+// =================== 7. Add New Task ===================
+document.getElementById("add-button").addEventListener("click", () => {
+  const input = document.getElementById("new-task");
+  const taskText = input.value.trim();
+  if (!taskText) return;
+
+  const newTask = document.createElement("div");
+  newTask.className = "check-box";
+  newTask.innerHTML = `
+    <input type="checkbox" class="task-checkbox">
+    <p>${taskText}</p>
+    <div class="right-of-check-box">
+      <span id="high">HIGH</span>
+      <span class="submission-time">${getCurrentTime()}</span>
+      <span id="delete">DELETE</span>
+    </div>
+  `;
+
+const clearBtn = document.querySelector(".clear-completed-tasks");
+clearBtn.parentNode.insertBefore(newTask, clearBtn);
+
+
+  const checkbox = newTask.querySelector("input[type='checkbox']");
+  const deleteBtn = newTask.querySelector("#delete");
+
+  applyCheckboxLogic(checkbox, newTask);
+  applyDeleteLogic(deleteBtn, newTask);
+
+  input.value = "";
+  updateTaskCount();
+});
+
+// =========clear All TAsks======
+
+function clear_tasks() {
+  const taskBoxes = document.getElementsByClassName('check-box');
+  
+
+  for (let i = taskBoxes.length - 1; i >= 0; i--) {
+    const checkbox = taskBoxes[i].querySelector('input[type="checkbox"]');
+    if (checkbox && checkbox.checked) {
+      taskBoxes[i].remove();
+    }
+  }
+}
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,1343 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UoCH | Home Page |</title>
+<style>
+     
+      img{
+        max-width: 100%;
+        height: auto;
+      }
+      .container{
+        max-width: 100%;
+        width: fit-content;
+        overflow-x: hidden;
+      }
+      body::-webkit-scrollbar {
+        width: 12px;
+      }
+      body::-webkit-scrollbar-thumb{
+        background-color: #52237f;
+        border-radius: 6px;
+      }
+      .top-head {
+        display: flex;
+        padding: 10px 25px;
+        justify-content: right;
+        gap: 350px;
+      }
+      .left-logo {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .right-head {
+        display: flex;
+        white-space: nowrap;
+        flex-wrap: wrap;
+        margin-left: 120px;
+      }
+      .right-head ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        list-style: none;
+      }
+      .right-head a:hover{
+        color: blue;
+      }
+      .right-head a {
+        text-decoration: none;
+        text-transform: uppercase;
+        list-style: none;
+        font-size: 12px;
+        color: #52237f;
+      }
+      .search-box{
+        position: relative;
+        
+      }
+      .border-bar{
+        padding: 4px;
+        background-image: linear-gradient(to right, gray,green, yellow,orange);
+      }
+      nav {
+        background-color: #52237f;
+        
+        display: flex;
+        padding: 10px;
+      }
+      .nav-items {
+        color: white;
+        text-decoration: none;
+      }
+      .nav-items a:hover{
+        color: gray;
+        border-bottom: 4px solid yellow;
+        padding-bottom: 10px;
+      }
+      .nav-items ul {
+        display: flex;
+        list-style: none;
+        gap: 28px;
+      }
+      nav a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        list-style: none;
+      }
+      .dropdown-item {
+        display: block;
+        width: 100%;
+        color: black;
+        white-space: nowrap;
+        background-color: white;
+      }
+      .about-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        padding: 10px;
+        gap: 15px;
+        margin-top: 30px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .about-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .about-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .admision-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        width: 150px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .admision-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .admision-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .administration-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        width: 150px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .administration-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .administration-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .academic-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        width: 150px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .academic-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .academic-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .examination-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        width: 150px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .examination-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .examination-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .ydc-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        width: 150px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .ydc-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .ydc-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .project-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        width: 150px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .project-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .project-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .research-dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        width: 150px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+      }
+      .research-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+      .research-dropdown > a::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .search-box{
+        flex-wrap: wrap;
+        margin-left: 30px;
+        margin-right: -28px;
+        width: 150px;
+      }
+      .search-box input{
+        line-height: 30px;
+        margin-top: -15px;
+      }
+      .search-box button{
+        background-color: transparent;
+        color: orange;
+        border: 1px solid orange;
+        margin-top: 3px;
+        cursor: pointer;
+        padding: 5px;
+      }
+      .search-box button:hover{
+        background-color: orange;
+        color: black;
+      }
+      .about-university{
+        background-color: rgb(221, 219, 219);
+        display: flex;
+        gap: 20px;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
+      }
+      .welcome-side{
+        width: 50%;
+        background-color: white;
+        position: relative;
+        top: 10px;
+        left: 5px;
+        margin-bottom: 20px;
+      }
+      .welcome-side h2{
+        background-color: #52237f;
+        color: white;
+        padding: 10px;
+      }
+      .welcome-display-part{
+        display: flex;
+        gap: 20px;
+        border-bottom: 2px dotted gray;
+        padding: 0 10px;
+      }
+      .welcome-display-part img{
+        position: relative;
+        top: -25px;
+        margin-top: -50px;
+      }
+      .welcome-text{
+        margin-top: 10px;
+      }
+      .weird-style{
+        position: relative;
+        left: -210px; 
+      }
+      .message-part{
+        width: 50%;
+        background-color: white;
+        position: relative;
+        top: 10px;
+        left: 5px;
+        margin-bottom: 20px;
+      }
+      .message-part h2{
+        background-color: #52237f;
+        color: white;
+        padding: 10px;
+      }
+      .message-part img{
+        position: relative;
+        top: -25px;
+        margin-top: -50px;
+      }
+      .message-display-part{
+        display: flex;
+        gap: 20px;
+        border-bottom: 2px dotted gray;
+        padding: 0 10px;
+      }
+       .message-display-part img{
+        position: relative;
+        top: -25px;
+        margin-top: 50px;
+      }
+      .news-portion{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        background-color: white;
+        margin-top: 30px;
+      }
+      .news-portion h2{
+        background-color: rgb(201, 197, 197);
+        padding: 5px;
+      }
+      .monthly-news{
+        border: 1px solid gray;
+        height: 50vh;
+        box-shadow: -6px 6px 2px rgb(152, 152, 236);
+      }
+      .monthly-news p{
+        padding: 20px;
+        font-size:18px ;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #790cdf;
+        font-weight: bold;
+        margin-top: -15px;
+      }
+      .latest-news{
+        border: 1px solid gray;
+        padding-bottom:20px ;
+        box-shadow: -6px 6px 2px rgb(152, 152, 236);
+      }
+      .latest-news ul{
+        font-size: 18px;
+        padding-right: 15px;
+      }
+      .latest-news li{
+        gap: 10px;
+        padding-bottom: 20px;
+        list-style: none;
+        border-bottom: 2px dotted rgb(204, 202, 202);
+        font-weight: bold;
+      }
+      .latest-news li a{
+        text-decoration: none;
+      }
+      .news-archive{
+         background-color: #52237f;
+        padding: 10px;
+        width: 200px;
+        margin-left: 90px;
+      }
+      .news-archive a{
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 50px;
+      }
+      .upcoming-events{
+        border: 1px solid gray;
+        height: 50vh;
+        box-shadow: -6px 6px 2px rgb(152, 152, 236);
+      }
+      .upcoming-events p{
+        padding: 20px;
+        font-size:17px ;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #790cdf;
+        border-bottom: 2px dotted gray;
+      }
+      .upcoming-events a{
+         text-decoration: none;
+         color: black;
+         font-weight: bold;
+      }
+      .event-archive{
+        background-color: #52237f;
+        padding: 10px;
+        width: 200px;
+        margin-left: 100px;
+      }
+      .event-archive a{
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 50px;
+      }
+      .map-portion{
+        display: flex;
+        gap: 50px;
+        padding-left: 10px;
+        margin-left: 20px;
+        margin-top: 430px;
+        background-color: rgb(245, 240, 240);
+      }
+       .map-portion h2{
+        background-color: #52237f;
+        color: white;
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+      .left-map{
+        border: 2px solid #ccc;
+         padding: 10px;
+      }
+      .right-map{
+         /* width: 100%;             */
+         /* overflow-x: auto;         */
+         white-space: nowrap;      
+         border: 2px solid #ccc;
+         padding: 10px;
+         overflow-x: visible;
+      }
+      .right-map::-webkit-scrollbar{
+        height: 10px;
+      }
+      .right-map::-webkit-scrollbar-track{
+        background-color: beige;
+      }
+      .right-map::-webkit-scrollbar-thumb{
+        background-color: #52237f;
+        border-radius: 4px;
+      }
+      .right-map img{
+         display: inline-block;
+         width: 800px;
+         overflow-x: visible;
+      }
+      footer{
+        background-color: #52237f;
+        color: white;
+        height: 130vh;
+        margin-top: 50px;
+      }
+      footer h3{
+        font-size: 25px;
+      }
+      .footer-top{
+        display: flex;
+        gap: 80px;
+        padding-left: 90px;
+      }
+      .about-us a{
+        color: white;
+      }
+      .about-us a:hover{
+        color: yellow;
+      }
+      .contact-us{
+        padding: 5px 40px;
+      }
+      .uoch-logo{
+        position: relative;
+        left: 47%;
+        top: 70px;
+      }
+      .social-account-links{
+        position: relative;
+        top: 80px;
+        left: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .social-account-links img:hover{
+        background-color: yellow;
+      }
+      .fb-icon{
+        position: relative;
+        display: inline-block;
+      }
+      .fb-icon-hover{
+        visibility: hidden;
+        position: absolute;
+        white-space: nowrap;
+        opacity: 0;
+        top: 30px;
+        background-color: beige;
+        color: black;
+        left: -30px;
+        padding: 5px;
+        z-index: 2;
+      }
+      .fb-icon:hover .fb-icon-hover{
+        visibility: visible;
+        opacity: 1;
+      }
+      .youtube-icon{
+        position: relative;
+        display: inline-block;
+      }
+      .youtube-icon-hover{
+        visibility: hidden;
+        position: absolute;
+        white-space: nowrap;
+        opacity: 0;
+        top: 30px;
+        background-color: beige;
+        color: black;
+        left: -30px;
+        padding: 5px;
+        z-index: 2;
+      }
+      .youtube-icon:hover .youtube-icon-hover{
+        visibility: visible;
+        opacity: 1;
+      }
+      .twitter-icon{
+        position: relative;
+        display: inline-block;
+      }
+      .twitter-icon-hover{
+        visibility: hidden;
+        position: absolute;
+        white-space: nowrap;
+        opacity: 0;top: 30px;
+        background-color: beige;
+        color: black;
+        left: -30px;
+        padding: 5px;
+        z-index: 2;
+      }
+      .twitter-icon:hover .twitter-icon-hover{
+        visibility: visible;
+        opacity: 1;
+      }
+      #finally-last-portion{
+        position: relative;
+        top: 100px;
+        padding: 30px;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+      }
+      
+      /* ***Page Responsiveness*** */
+
+@media (max-width: 1200px) {
+  body{
+    overflow-x: hidden;
+  }
+  .top-head {
+    gap: 100px;
+    flex-wrap: wrap;
+    display: inline-block;  
+  }
+  .search-box{
+    position: sticky;
+  }
+  .right-head{
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .right-head ul {
+    gap: 15px;
+    font-size: 11px;
+  }
+  .search-box {
+    width: 120px;
+    margin: 10px auto;
+  }
+  .news-portion {
+    grid-template-columns: 1fr 1fr;
+  }
+  .map-portion {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .right-head{
+    margin-left: 250px;
+  }
+  .left-logo{
+    position: absolute;
+    margin-top: 30px;
+    
+  }
+  nav{
+    display: flex;
+    width: auto;
+  }
+  .nav-items ul{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: 150%;
+    
+  }
+  .about-university{
+    flex-direction: column;
+  }
+  .welcome-side{
+    width:100%;
+  }
+  #welcome-p{
+  text-align:justify;
+  }
+  .welcome-side h2 , h3, p{
+    text-align: center;
+    width: 100%;
+  }
+  .welcome-side text{
+   text-align:justify;
+    margin-right: 80px;
+  }
+  .welcome-side img{
+    position:absolute;
+    top: 330px;
+    left: 500px;
+  }
+  .welcome-side h3{
+    background-color: beige;
+    padding: 5px;
+  }
+
+  
+  .weird-style{
+    margin-left: 210px;
+    text-align:justify;
+    
+  }
+  .message-part{
+    width: 100%;
+    margin-left: 2px;
+    
+
+  }
+  .message-part img{
+    position: relative;
+    margin-bottom: 60px;
+
+  }
+  .message-part h2{
+    text-align: center;
+  }
+  .message-part p{
+    width: fit-content;
+  }
+  .news-portion{
+    position: absolute;
+    grid-template-columns: repeat(1, 1fr);
+    height: auto;
+  }
+  .news-portion h2{
+    text-align: center;
+  }
+  .news-archive, .event-archive{
+   position: relative;
+   left: 150px;
+  }
+  .upcoming-events{
+   height: auto;
+   padding-bottom: 20px;
+  }
+  .map-portion h2{
+    text-align: center;
+  }
+  .map-portion{
+    border-width: auto;
+    height: auto;
+    position: relative;
+    top: 680px;
+  }
+  .map-portion img{
+    width: 100%;
+  }
+  footer{
+     height: 300vh;
+     width: auto;
+     margin-top: 700px;
+  }
+  #footer-portion{
+    position: relative;
+    height: 200vh;
+   
+    
+  }
+  
+  .footer-top{
+    margin-left: -40px;
+     flex-direction: column;
+    
+  }
+  .footer-top img{
+    margin-left: 180px;
+  }
+  .footer-top, .contact-us{
+    margin-left: -50px;
+  }
+  .contact-us{
+    text-align: center;
+  }
+ 
+  .about-us ul{
+    position: relative;
+    left: -40px;
+  }
+  .about-us li{
+    margin-left: 250px;
+  }
+
+.uoch-logo{
+  margin-left: -50px
+}
+
+  #finally-last-portion{
+   display: flex;
+   justify-content: center;
+  }
+  .social-account-links{
+    position: relative;
+    left:2px;
+  }
+
+}
+
+/* ****FOR TABLETS**** */
+@media (max-width:768px) {
+  body{
+    overflow-x: hidden;
+  }
+  .top-head{
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    top: -30px;
+  }
+  .right-head{
+    position: relative;
+    left: 10px;
+  }
+  .right-head ul{
+    margin-left: -120px;
+  }
+  .left-logo{
+    position: relative;
+    top: 30px; 
+  }
+  .search-box{
+    position: relative;
+    top: 50px;
+    right: 60%;
+    display: flex;
+  }
+  .search-box input{
+    width: 300px;
+  }
+  #search-btn{
+    position:relative;
+    left: 320px;
+    bottom: 35px;
+  }
+  .about-university{
+    display: block;
+    width: 180%;
+  }
+  .about-university h2{
+    text-align: center;
+  }
+  .welcome-side p{
+    text-align: left;
+
+  }
+  .weird-style{
+    position: relative;
+    left: 1px;
+    text-align: center;
+  }
+  .news-portion{
+    position: relative;
+    top: 250px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+  .news-portion h2{
+    text-align: center;
+  }
+  .monthly-news p{
+    text-align: center;
+    position: relative;
+    left: -50px;
+  }
+  .news-archive, .event-archive{
+    margin-left:430px;
+  }
+  .upcoming-events p{
+    text-align: center;
+  }
+  .map-portion{
+    margin-top: 300px;
+  }
+  .map-portion h2{
+    text-align: center;
+  }
+  .map-portion img{
+    width:100%;
+  }
+  .footer-top{
+    position: relative;
+    left: -50px;
+    
+  }
+  .contact-us{
+    margin-left: -70px;
+
+  }
+  .about-us{
+   margin-left: -70px;
+  }
+  .social-account-links{
+    margin-left: 30px;
+  }
+
+  #finally-last-portion {
+    text-align: center;
+    margin-left: 270px;
+    width: 50%;
+    
+  }
+}
+@media (max-width:992px) {
+  body{
+    overflow-x: hidden;
+  }
+  .top-head{
+    display: inline-block;
+
+  }
+  .right-head{
+    position: relative;
+    left: 120px;
+    top: -20px;
+  }
+  .left-logo{
+    position: relative;
+    top: 30px;
+    
+  }
+  .search-box{
+    position: relative;
+    top: 50px;
+    right: 60%;
+    display: flex;
+  }
+  .search-box input{
+    width: 300px;
+  }
+  #search-btn{
+    position:relative;
+    left: 320px;
+    bottom: 35px;
+  }
+  .about-university{
+    display: block;
+    width: 180%;
+  }
+  .about-university h2{
+    text-align: center;
+  }
+  .welcome-side p{
+    text-align: left;
+
+  }
+  .weird-style{
+    position: relative;
+    left: 1px;
+    text-align: center;
+  }
+  .news-portion{
+    position: relative;
+    top: 250px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+  .news-portion h2{
+    text-align: center;
+  }
+  .monthly-news p{
+    text-align: center;
+    position: relative;
+    left: -50px;
+  }
+  .news-archive, .event-archive{
+    margin-left:430px;
+  }
+  .upcoming-events p{
+    text-align: center;
+  }
+  .map-portion{
+    margin-top: 300px;
+  }
+  .map-portion h2{
+    text-align: center;
+  }
+  .map-portion img{
+    width:100%;
+  }
+  .footer-top{
+    position: relative;
+    left: -50px;
+    
+  }
+  .contact-us{
+    margin-left: -70px;
+
+  }
+  .about-us{
+   margin-left: -70px;
+  }
+  .social-account-links{
+    margin-left: 30px;
+  }
+
+  #finally-last-portion {
+    text-align: center;
+    margin-left: 270px;
+    width: 50%;
+    
+  } 
+}
+      </style>
+<div class="container">
+  <header>
+    <div class="top-head">
+      <div class="left-logo">
+        <a href="https://uoch.edu.pk/home">
+          <img src="https://placehold.co/250x30?text=University+Of+Chitral" alt="">
+        </a>
+      </div>
+      <div class="right-head">
+        <ul>
+          <li>
+            <a href="http://www.digitallibrary.edu.pk/uoch.html">HEC-Digital-Library</a>
+          </li>
+          <li>
+            <a href="https://www.turnitin.com/">TURNTIN</a>
+          </li>
+          <li>
+            <a href="https://accounts.google.com/signin">EMAil</a>
+          </li>
+          <li>
+            <a href="https://uoch.edu.pk/jobs">JOBS</a>
+          </li>
+          <li>
+            <a href="https://uoch.edu.pk/tenders">TRENDERS</a>
+          </li>
+          <li>
+            <a href="https://uoch.edu.pk/page/downloads">DOWNLOADS</a>
+          </li>
+          <div id="admission-link">
+            <li>
+              <a href="https://uoch.edu.pk/page/online-admissions">ONLINE-ADMISSIONS</a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="border-bar"></div>
+  <nav>
+    <div class="nav-items">
+      <ul>
+        <li>
+          <a href="https://uoch.edu.pk/home">Home</a>
+        </li>
+        <li class="nav-item about-dropdown">
+          <a href="https://uoch.edu.pk/home#">About</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">UOCH overview</a>
+            <br>
+            <a class="dropdown-item" href="#">Vision &amp; Mission</a>
+            <br>
+            <a class="dropdown-item" href="#">Vice Chancellor's Message</a>
+            <br>
+            <a class="dropdown-item" href="#">Recognition</a>
+            <br>
+            <a class="dropdown-item" href="#">Laws, Policies &amp; SOPs</a>
+            <br>
+            <a class="dropdown-item" href="#">Life On Campus</a>
+            <br>
+          </div>
+        </li>
+        <li class="nav-item admision-dropdown">
+          <a href="https://uoch.edu.pk/home#">Admision</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/how-to-apply">How to Apply</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/cost-finances">Cost &amp; Finances</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/undergraduate">Undergraduate</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/graduate">Graduate</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/postgraduate">Postgraduate</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/scholarships">Scholarships</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/merit-list">Merit List</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/visit-uoch">Visit UoCh</a>
+            <br>
+          </div>
+        </li>
+        <li class="nav-item administration-dropdown">
+          <a href="https://uoch.edu.pk/home#">Administration</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/vice-chancellor-office">Vice Chancellor Office</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/directorates-of-university-of-chitral">Directorates</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/registerar-office">Registrar Office</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/qec">QEC</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/directorate-of-legal-cell">Legal Cell</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/provost-office">Departments</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/chief-proctor-office">Academic Calendar</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/pro-office"></a>
+            <br>
+          </div>
+        </li>
+        <li class="nav-item academic-dropdown">
+          <a href="https://uoch.edu.pk/departments/list">Academics</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/vice-chancellor-office">Departments</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/academic-calendar">Academic Calendar</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/home">Affiliated Institutes</a>
+            <br>
+          </div>
+        </li>
+        <li class="nav-item examination-dropdown">
+          <a href="https://uoch.edu.pk/departments/list">Examinations</a>
+          <div class="dropdown-menu">
+            <a class="https://uoch.edu.pk/page/examinations-overview">Overview</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/home">Affiliated Colleges</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/private-examinations-syllabus">Private Examinations</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/home#">Results</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/examinations-staff">Staff</a>
+            <br>
+          </div>
+        </li>
+        <li class="nav-item ydc-dropdown">
+          <a href="https://uoch.edu.pk/departments/list">YDC</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/saso">SASO</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/iro">IRO</a>
+          </div>
+        </li>
+        <li class="nav-item project-dropdown">
+          <a href="https://uoch.edu.pk/departments/list">Projects</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/saso">PSDP Project</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/iro">Jobs</a>
+          </div>
+        </li>
+        <li>
+          <a href="https://uoch.edu.pk/page/university-of-chitral-budgets">Budgets</a>
+        </li>
+        <li class="nav-item research-dropdown">
+          <a href="https://uoch.edu.pk/departments/list">Research</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/oric">ORIC</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/home">Research Centers</a>
+            <br>
+            <a class="dropdown-item" href="https://uoch.edu.pk/page/university-of-chitral-journals">Journals</a>
+          </div>
+        </li>
+        <div class="search-box">
+        <span id="search-box-body">
+            <li>
+            <input type="search" placeholder="Search">
+            <button id="search-btn">Search</button>
+          </li>
+        </span>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <div class="slider-body">
+    <img src="https://placehold.co/1350x800?text=Background Slider" alt="">
+  </div>
+  <div class="about-university">
+    <div class="welcome-side">
+      <h2>Welcome to the University of Chitral</h2>
+      <div class="welcome-display-part">
+        <img src="https://placehold.co/190x106?text=Picture" alt="">
+        <div class="welcome-text">
+          <h3>
+            <i>Generate and Disseminate Knowledge</i>
+          </h3>
+          <p id="welcome-p">To serve the society by nurturing the students with a delicate intellectual, cultural, ethical, and humane sensitivity through a pleasant blend of ancient and modern wisdom; to foster a scientific temper and to promote 
+            
+            <p class="weird-style">professional and technological expertise.</p>
+           
+            <p
+            class="weird-style">Pivotal to this vision is a commitment to contributing in local, national and international development, concomitantly adhering to the dictates of our social ethics, traditions and environment.
+              <a href="https://uoch.edu.pk/Vission-and-Mission">Read More</a>
+          </p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="message-part">
+      <h2>Vice Chancellor’s Message</h2>
+      <div class="message-display-part">
+        <img src="https://placehold.co/190x106?text=Picture" alt="">
+        <p>Welcome to the University of Chitral-a new established public sector university in Khyber Pakhtunkhwa, Pakistan. Our mission goes beyond simply classroom teaching and basic research-we strive to provide an academic environment that encourages dialogue, critical thinking, innovation and respect for diversity and inclusiveness. Our faculty is committed to excellence in teaching, research, and community engagement-bringing  real-world
+          <span class="weird-style">experience into the classroom.
+            <a href="https://uoch.edu.pk/vcmessage">Read More</a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="news-portion">
+    <div class="newsletter">
+      <div class="monthly-news">
+        <h2>Monthly Newsletter</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod pariatur odit, ipsum, architecto aperiam est <br> dignissimos officiis rem eaque mollitia quae voluptate similique, a nulla molestiae dicta. Adipisci, <br>dolorem dignissimos.</p>
+      </div>
+    </div>
+    <div class="latest-news">
+      <h2>Latest News</h2>
+      <p></p>
+      <ul>
+        <li>
+          <a href="https://uoch.edu.pk/news_details/nchd-representative-visits-university-of-chitral">NCHD Representative Visits University Of Chitral.
+            <span>July 24, 2025</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://uoch.edu.pk/news_details/final-merit-list-of-students-for-prime-ministers-youth-laptop-scheme-phase-iv-university-of-chitral">Final Merit List of students for Prime Minister's Youth Laptop Scheme Phase-IV University Of Chitral.
+            <span>July 24, 2025</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://uoch.edu.pk/news_details/district-coordinator-srsppatrip-project-meets-the-vice-chancellor-university-of-chitral">District Coordinator SRSP/PATRIP Project Meets the Vice Chancellor, University of Chitral.
+            <span>July 22, 2025</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://uoch.edu.pk/news_details/the-first-meeting-of-the-institutional-quality-circle-iqc-at-the-university-of-chitral-was-held">The first meeting of the institutional Quality Circle (IQC) at the University of Chitral was held 
+            <span>Jult 22, 2025</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://uoch.edu.pk/news_details/university-of-chitral-organizes-plantation-drive-to-restore-nature">University of Chitral Organizes Plantation Drive to restore Nature. 
+            <span>July 11, 2025</span>
+          </a>
+        </li>
+      </ul>
+      <p></p>
+      <div class="news-archive">
+        <a href="https://uoch.edu.pk/archive/1">News Archive</a>
+      </div>
+    </div>
+    <div class="upcoming-events">
+      <h2>Upcomming Events</h2>
+      <p>
+        <a href="https://uoch.edu.pk/news_details/department-of-botany-university-of-chitral-is-going-to-organize-plantation-drive-at-university-of-chitral-on-11th-july-2025">Department of Botany, University of Chiral is going to organize "Plantation Drive" at University of Chitral on 11th July, 2025.
+          <span>July 10, 2025</span>
+        </a>
+      </p>
+      <div class="event-archive">
+        <a href="https://uoch.edu.pk/archive/2">Event Archive</a>
+      </div>
+    </div>
+  </div>
+  <div class="map-portion">
+    <div class="left-map">
+      <h2>Political Map of Pakistan</h2>
+      <img src="https://placehold.co/600x450/?text=PAKISTAN+Political+Map" alt="">
+    </div>
+    <div class="right-map">
+      <h2>Campus Location</h2>
+      <img src="https://placehold.co/600x450/?text=UoCh+Location+Map" alt="">
+    </div>
+  </div>
+  <footer id="footer-portion">
+    <div id="footer-items">
+      <div class="footer-top">
+      <div class="uoch-view-map">
+        <h3>University of Chitral</h3>
+        <p>Seen Lasht Garam Cashma Road Chitral (Lower)</p>
+        <img src="https://placehold.co/300x150/?text=Google+Map" alt="">
+      </div>
+      <div class="contact-us">
+        <h3>Contact us</h3>
+        <span id="cntct-nmbr">+92-943-415001 (PS to VC)</span>
+        <p>Or Visit our Campus 
+          <br>
+Seenlasht Garam Chashma Road Chitral(Lower)
+        </p>
+      </div>
+      <div class="about-us">
+        <h3>About us</h3>
+        <ul>
+          <li>
+            <a href="https://uoch.edu.pk/home#">Faculties</a>
+          </li>
+          <li>
+            <a href="https://uoch.edu.pk/home#">Centers and Intitutes</a>
+          </li>
+          <li>
+            <a href="https://uoch.edu.pk/href=">Campus Location</a>
+          </li>
+          <li>
+            <a href="https://www.google.com/maps/place/University+of+Chitral/@35.9162761,71.8129303,683m/data=!3m1!1e3!4m6!3m5!1s0x38c4acde993c92d5:0x65a122d6f58eb221!8m2!3d35.9161466!4d71.8143309!16s%2Fg%2F11g98vc66m?entry=ttu">Map and Location</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-mid-uoch-logo">
+      <div class="uoch-logo">
+        <img src="https://placehold.co/150x50/?text=UoCh+Logo" alt="">
+      </div>
+      <div class="social-account-links">
+        <div class="fb-icon">
+          <a href="https://www.facebook.com/uoch.edu.pk">
+            <img src="https://placehold.co/20x20?text=FB" alt="">
+            <span class="fb-icon-hover">Follow UoCh on Facebook</span>
+          </a>
+        </div>
+        <div class="twitter-icon">
+          <a href="https://twitter.com/uoch0fficial">
+            <img src="https://placehold.co/20x20?text=Tw" alt="">
+            <span class="twitter-icon-hover">Follow UoCh on Twitter</span>
+          </a>
+        </div>
+        <div class="youtube-icon">
+          <a href="https://www.youtube.com/@UniversityofChitral0fficial">
+            <img src="https://placehold.co/20x20?text=YT" alt="">
+            <span class="youtube-icon-hover">Follow UoCh on Facebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p id="finally-last-portion">Disclaimer | Privacy Policy | Accessibility | Website feedback This is an official page/publication of the University of Chitral. | © 2025 University of Chitral Designed by: IT Department, University <span style="text-align: center;">of Chitral</span>.
+    </p>
+    </div>
+  </footer>
+</div>
